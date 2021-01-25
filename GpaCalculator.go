@@ -5,33 +5,34 @@ import (
 )
 
 // returns the average of the gpa from each class
-func getAverage(nums []float64 ) float64{
+func getAverage(nums []float64) float64 {
 	average := 0.0
-	for _,val := range nums {
+	for _, val := range nums {
 		average += val
 	}
-	average/=float64(len(nums))
+	average /= float64(len(nums))
 	return average
 
 }
+
 // converts to gpa form (4.0, 3.0, etc)
-func gradesToGradingScale(nums []int) []float64{
-	var gpaSlice[]float64
-	for _,val := range nums{
+func gradesToGradingScale(nums []int) []float64 {
+	var gpaSlice []float64
+	for _, val := range nums {
 		newGPA := 4.0
-		if val < 90{
+		if val < 90 {
 			newGPA = 3.0
 		}
-		if val < 80{
+		if val < 80 {
 			newGPA = 2.0
 		}
-		if val < 70{
+		if val < 70 {
 			newGPA = 1.0
 		}
-		if val < 65{
+		if val < 65 {
 			newGPA = 0.0
 		}
-		gpaSlice = append(gpaSlice,newGPA)
+		gpaSlice = append(gpaSlice, newGPA)
 	}
 	return gpaSlice
 }
@@ -43,7 +44,7 @@ func main() {
 
 	fmt.Println("Type the number of classes you are taking.")
 	fmt.Scanln(&numClasses)
-	
+
 	grades := make([]int, numClasses)
 
 	for i := 0; i < numClasses; i++ {
@@ -51,5 +52,5 @@ func main() {
 		fmt.Scanln(&grades[i])
 	}
 	fmt.Println(getAverage(gradesToGradingScale(grades)))
-	
+
 }
