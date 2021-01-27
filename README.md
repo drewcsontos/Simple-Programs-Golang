@@ -3,6 +3,6 @@
 
 Current Programs:
 
-GPA Calculator
+  GPA Calculator
 
-TicTacToe
+  TicTacToe
